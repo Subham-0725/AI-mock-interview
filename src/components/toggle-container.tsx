@@ -1,7 +1,6 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -23,8 +22,9 @@ const { userId } = useAuth();
       <SheetContent>
         <SheetHeader>
           <SheetTitle></SheetTitle>
-          
-            <NavigationRoutes isMobile/>
+
+          <nav className="gap-7 flex flex-col items-start">
+            <NavigationRoutes isMobile />
             {userId && (
               <NavLink
                 to={"/generate"}
@@ -38,6 +38,7 @@ const { userId } = useAuth();
                 Take An Interview
               </NavLink>
             )}
+          </nav>
         </SheetHeader>
       </SheetContent>
     </Sheet>
