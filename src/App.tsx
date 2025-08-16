@@ -7,6 +7,8 @@ import SignInPage from '@/routes/sign-in';
 import SignUpPage from '@/routes/sign-up';
 import ProtectedRoutes from './layouts/protected-routes';
 import { MainLayout } from '@/layouts/main-layout';
+import Generate from './components/generate';
+import Dashboard from './routes/dashboard';
 
 const App = () => {
   return (
@@ -25,8 +27,9 @@ const App = () => {
 
         {/* Protected routes */}
         <Route element={<ProtectedRoutes><MainLayout /></ProtectedRoutes>}>
-          {/* Add child protected routes here */}
-          {/* Example: <Route path="/dashboard" element={<Dashboard />} /> */}
+          <Route element={<Generate/>} path="/generate">
+          <Route index element={<Dashboard />} />
+          </Route>
         </Route>
       </Routes>
     </Router>
